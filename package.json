@@ -1,9 +1,17 @@
-﻿{
+{
   "name": "chat-archive",
   "private": true,
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "ingest": "node src/cli/ingest.js"
+    "ingest": "node src/cli/ingest.js",
+    "load-projects": "node src/cli/load-projects.js",
+    "serve": "node src/cli/serve.js",
+    "viewer:dev": "npm --prefix viewer run dev",
+    "viewer:build": "npm --prefix viewer run build",
+    "viewer:install": "npm --prefix viewer install"
+  },
+  "dependencies": {
+    "yaml": "^2.9.0"
   }
 }

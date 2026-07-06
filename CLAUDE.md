@@ -22,13 +22,18 @@ Read `docs/SCHEMA.md` before touching anything. Key rules:
 - `data/archive.db`, `data/attachments/`, `data/reports/`
 - `projects.yaml` — human-edited: names for provider project ids
 
-## Running the viewer (M2)
+## Running the viewer (M2–M4)
 1. `npm run load-projects`            # once, after editing projects.yaml names
 2. `npm run viewer:install`           # once
 3. Dev: `PORT=5199 npm run serve` + `npm run viewer:dev` → http://localhost:5173
    Prod: `npm run viewer:build` then `npm run serve` → http://localhost:5173 (serves viewer/dist)
-- API: /api/projects, /api/conversations?project=<id|none|all>, /api/conversations/:id[?hidden=1],
-  /api/search?q=, /api/attachments/:fileId. Conversations deep-link via ?c=<id>.
+- API (read-only archive): /api/projects, /api/models, /api/stats,
+  /api/conversations?project=<id|none|all>&tag=&model=&starred=1&sort=<recent|oldest|messages|title>,
+  /api/conversations/:id[?hidden=1], /api/search?q=, /api/attachments/:fileId,
+  /api/export/conversation/:id.(md|json). Conversations deep-link via ?c=<id>.
+- API (read/write, user data ONLY): POST /api/conversations/:id/tags {name},
+  DELETE /api/conversations/:id/tags/:tagId. Tags live in tags + conversation_tags tables
+  (created by serve.js on a second read/write handle; archive rows are never mutated).
 
 ## Current data
 User's ChatGPT export (read-only):
@@ -36,9 +41,11 @@ User's ChatGPT export (read-only):
 678 conversations, 18 projects (g-p-*), 900 .dat attachments, mostly Hebrew (viewer needs RTL).
 
 ## Roadmap
-M1 ingest (done) · M2 React viewer MVP (done: sidebar/list/chat/markdown/attachments/basic search) ·
-M3 search/filters (FTS UI, date/model/starred filters, hidden-thoughts polish) · M4 tags+export+stats ·
-M5 Claude/Gemini adapters + unified projects · M6 AI features (summaries, orphan classification).
+M1 ingest (done) · M2 viewer MVP (done: sidebar/list/chat/markdown/attachments/search) ·
+M3 search/filters (done: sort, model+starred filters, tag filter, FTS search) ·
+M4 tags+export+stats (done: tag editor, MD/JSON export, stats dashboard) ·
+M5 Claude/Gemini adapters + unified projects (BLOCKED: need real Claude/Gemini exports to build against) ·
+M6 AI features (summaries, orphan classification — needs Claude API access/opt-in; 175 project-less chats).
 
 Note: viewer is a Node-shell server for now (src/cli/serve.js). The future browser-only goal
 (client-side zip processing) is unchanged — src/core/ stays pure; only the shell would be swapped.

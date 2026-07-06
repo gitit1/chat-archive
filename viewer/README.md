@@ -24,13 +24,17 @@ Set `API_PORT` for the dev proxy if the server runs on a non-default port.
 
 ## What it does
 
-- Right sidebar: projects (named via `projects.yaml`), "כל השיחות", "ללא פרויקט", plus a search box.
-- Middle: conversation list for the selected project, or search results.
+- Right sidebar: projects (named via `projects.yaml`), "כל השיחות", "ללא פרויקט", tags, and a search box.
+- Middle: conversation list with sort + model + starred filters, or search results.
 - Main pane: the conversation, rendered as Markdown, with inline images and file links.
   Toggle "הצג הודעות מוסתרות" to reveal the model's hidden `thoughts`.
+  Add/remove tags inline; export the conversation as Markdown or JSON.
+- Top bar: "סטטיסטיקות" opens a dashboard (totals, monthly timeline, per-project + per-model bars).
 - Conversations deep-link: `?c=<conversation-id>`.
 
-## Notes / future (M3+)
+## Notes / future (M5+)
 
 - Search is all-terms FTS5 with a JS-built excerpt (contentless FTS can't `snippet()`).
-- Not yet: filters (date/model/starred), tag editing, export, stats, dark mode.
+- Tags are stored in the archive DB (`tags`, `conversation_tags`) via serve.js's write handle;
+  archive rows themselves are never mutated.
+- Not yet: unified cross-provider projects (needs Claude/Gemini exports), AI summaries, dark mode.

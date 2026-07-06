@@ -1,0 +1,60 @@
+# chat-archive — project names
+# ChatGPT exports contain only project IDs, not names. Edit the name: values below —
+# these are DRAFT names proposed from the chat titles (see data/reports/project-naming.md).
+# Each logical project can hold aliases from several providers (chatgpt:, claude:, gemini:)
+# so chats from all providers merge under one project.
+
+projects:
+  - name: "מיילים והתכתבות אישית"        # DRAFT — 139 chats, 2025-02 → 2026-06
+    aliases: ["chatgpt:g-p-67b9b22480e8819193b604f2f5045172"]
+
+  - name: "נגישות (עבודה)"                # DRAFT — 79 chats, accessibility/CLS/MUI
+    aliases: ["chatgpt:g-p-68f4d968cab08191879308b31483da05"]
+
+  - name: "פרויקט כתיבה"                  # DRAFT — 71 chats, Writing/Planning parts
+    aliases: ["chatgpt:g-p-69e0609e0cf881918826ddb0c1cd700e"]
+
+  - name: "PowerApps"                     # DRAFT — 46 chats, PowerFX/PowerApps
+    aliases: ["chatgpt:g-p-6828447c140c8191ad4a4e22e76875f1"]
+
+  - name: "React Interview Prep"          # DRAFT — 30 chats
+    aliases: ["chatgpt:g-p-67bae6ab77d08191960eec2a33fb6b91"]
+
+  - name: "השקעות ומניות"                 # DRAFT — 28 chats
+    aliases: ["chatgpt:g-p-698f695392508191980fbf83fcda77aa"]
+
+  - name: "טיול אפריקה"                   # DRAFT — 21 chats, Zambia/South Africa
+    aliases: ["chatgpt:g-p-693facf1e18081919515800be2bda6b4"]
+
+  - name: "טיולים — תאילנד, דובאי, גאורגיה" # DRAFT — 15 chats
+    aliases: ["chatgpt:g-p-67fb5fdd08b881918a07822bd31ae77d"]
+
+  - name: "טיול פינלנד ולפלנד"            # DRAFT — 14 chats
+    aliases: ["chatgpt:g-p-6784b58c20a4819181d7a8fbc4b8bd13"]
+
+  - name: "Storybook וניקוי קוד"          # DRAFT — 13 chats
+    aliases: ["chatgpt:g-p-693d48f2e4748191884a82cc39009a5d"]
+
+  - name: "Homebase"                      # DRAFT — 11 chats
+    aliases: ["chatgpt:g-p-691edb88ed048191ab0af3b0f0ee3ac6"]
+
+  - name: "OUAT SwanQueen פאנפיק"         # DRAFT — 10 chats
+    aliases: ["chatgpt:g-p-6a109ddff268819181edd1c0997fece1"]
+
+  - name: "שגרה ואורח חיים"               # DRAFT — 8 chats, keto/routine/moving
+    aliases: ["chatgpt:g-p-696c8bd2de0c8191a6e2eeff1b10685b"]
+
+  - name: "ניהול מוצרים (אקסל/ריאקט)"     # DRAFT — 4 chats
+    aliases: ["chatgpt:g-p-68590fb5daa08191a35478c7ea63be71"]
+
+  - name: "רכיבי פרונטאנד"                # DRAFT — 3 chats
+    aliases: ["chatgpt:g-p-68b1754d475481918640211dd6361473"]
+
+  - name: "שיחות פרידה"                   # DRAFT — 2 chats
+    aliases: ["chatgpt:g-p-690534438b2881918cc719c2dfe6c8e6"]
+
+  - name: "משחק בפייתון"                  # DRAFT — 2 chats
+    aliases: ["chatgpt:g-p-696df74684788191b55d8593861bc40b"]
+
+  - name: "The Wilds"                     # DRAFT — 1 chat
+    aliases: ["chatgpt:g-p-69f10d5d1c308191913d2ee70752b72b"]

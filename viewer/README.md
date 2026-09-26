@@ -1,5 +1,7 @@
 # chat-archive viewer (M2)
 
+מצב: פתוח · תיעוד הרצה עדכני של רכיב חי בפרויקט שבתחזוקה, בלי סימן שהוחלף.
+
 Vite + React + MUI reader for the archive DB. RTL/Hebrew-first. Reads everything from
 the `/api` endpoints served by `src/cli/serve.js` — it holds no data itself.
 

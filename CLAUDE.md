@@ -23,10 +23,13 @@ Read `docs/SCHEMA.md` before touching anything. Key rules:
 - `projects.yaml` — human-edited: names for provider project ids
 
 ## Running the viewer (M2–M4)
+Ports come from the global dev-ports registry (`~/.claude/skills/dev-ports`):
+API = **5200**, viewer dev = **5201**. Never use 5173/5174 (banned, Vite defaults).
 1. `npm run load-projects`            # once, after editing projects.yaml names
 2. `npm run viewer:install`           # once
-3. Dev: `PORT=5199 npm run serve` + `npm run viewer:dev` → http://localhost:5173
-   Prod: `npm run viewer:build` then `npm run serve` → http://localhost:5173 (serves viewer/dist)
+3. Dev: `npm run serve` + `npm run viewer:dev` → http://localhost:5201
+   Prod: `npm run viewer:build` then `npm run serve` → http://localhost:5200 (serves viewer/dist)
+   (Port override, PowerShell: `$env:PORT=…; npm run serve`; Vite proxy target: `$env:API_PORT=…`)
 - API (read-only archive): /api/projects, /api/models, /api/stats,
   /api/conversations?project=<id|none|all>&tag=&model=&starred=1&sort=<recent|oldest|messages|title>,
   /api/conversations/:id[?hidden=1], /api/search?q=, /api/attachments/:fileId,

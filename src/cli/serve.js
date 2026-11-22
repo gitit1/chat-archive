@@ -4,8 +4,8 @@
 // - Read/write for user-owned data ONLY: tags (tags, conversation_tags tables).
 // Also serves attachment files and, in production, the built viewer (viewer/dist).
 //
-//   node src/cli/serve.js            # http://localhost:5173
-//   PORT=8080 node src/cli/serve.js
+//   node src/cli/serve.js                     # http://localhost:5200 (dev-ports registry)
+//   $env:PORT=8080; node src/cli/serve.js     # override (PowerShell)
 //
 // No core logic lives here — this is a Node shell. Archive rows are never mutated.
 
@@ -21,7 +21,7 @@ const DATA_DIR = path.join(ROOT, 'data');
 const DB_PATH = path.join(DATA_DIR, 'archive.db');
 const ATTACH_DIR = path.join(DATA_DIR, 'attachments');
 const DIST_DIR = path.join(ROOT, 'viewer', 'dist');
-const PORT = Number(process.env.PORT ?? 5173);
+const PORT = Number(process.env.PORT ?? 5200);
 const PROVIDER = 'chatgpt';
 
 if (!existsSync(DB_PATH)) {

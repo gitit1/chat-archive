@@ -7,7 +7,7 @@
     "ingest": "node src/cli/ingest.js",
     "load-projects": "node src/cli/load-projects.js",
     "serve": "node src/cli/serve.js",
-    "viewer:dev": "npm --prefix viewer run dev",
+    "t": "npm --prefix viewer run dev",
     "viewer:build": "npm --prefix viewer run build",
     "viewer:install": "npm --prefix viewer install"
   },
